@@ -1,0 +1,51 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// Tabel Akun Kas (Tempat uang disimpan)
+model CashAccount {
+  id           Int           @id @default(autoincrement())
+  name         String        // Contoh: "Kas Himpunan", "Bank BNI"
+  balance      Decimal       @default(0.00) @db.Decimal(15, 2)
+  transactions Transaction[]
+  
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+}
+
+// Tabel Kategori (Alasan uang masuk/keluar)
+model Category {
+  id           Int           @id @default(autoincrement())
+  name         String        // Contoh: "Uang Kas Anggota", "Konsumsi Rapat"
+  type         TransactionType
+  transactions Transaction[]
+}
+
+// Tabel Transaksi (Catatan mutasi)
+model Transaction {
+  id           Int           @id @default(autoincrement())
+  referenceNo  String        @unique // Nomor bukti / kuitansi
+  amount       Decimal       @db.Decimal(15, 2)
+  type         TransactionType
+  description  String
+  date         DateTime      @default(now())
+  
+  accountId    Int
+  account      CashAccount   @relation(fields: [accountId], references: [id])
+  
+  categoryId   Int
+  category     Category      @relation(fields: [categoryId], references: [id])
+
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+}
+
+// Pilihan statis untuk arah uang
+enum TransactionType {
+  IN   // Pemasukan
+  OUT  // Pengeluaran
+}
