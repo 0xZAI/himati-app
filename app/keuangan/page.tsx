@@ -1,7 +1,6 @@
 import { prisma } from "../../lib/prisma";
 
 export default async function KeuanganPublik() {
-  // --- LOGIKA DATA (READ-ONLY) ---
   const accounts = await prisma.cashAccount.findMany({ orderBy: { id: 'asc' } });
   const totalSaldo = accounts.reduce((sum, acc) => sum + Number(acc.balance), 0);
 

@@ -1,9 +1,14 @@
 import { PrismaClient } from '@prisma/client';
 import { PrismaPg } from '@prisma/adapter-pg';
 
-// Masukkan URL langsung ke dalam adapter
+const connectionString = process.env.DATABASE_URL;
+
+if (!connectionString) {
+  throw new Error("DATABASE_URL tidak ditemukan di file .env");
+}
+
 const adapter = new PrismaPg({ 
-  connectionString: "postgresql://admin:secretpassword@127.0.0.1:5432/keuangan_organisasi?schema=public" 
+  connectionString 
 });
 
 const prisma = new PrismaClient({ adapter });

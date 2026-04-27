@@ -1,8 +1,9 @@
 import { defineConfig } from "prisma/config";
+import "dotenv/config"; 
 
 export default defineConfig({
   schema: "prisma/schema.prisma",
   datasource: {
-    url: "postgresql://admin:secretpassword@127.0.0.1:5432/keuangan_organisasi?schema=public",
+    url: process.env.DATABASE_URL as string,
   },
 });
