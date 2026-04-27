@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 export default function Footer() {
 const pathname = usePathname();
   
-  const isHiddenPage = pathname === "/admin" || pathname === "/login" || pathname.startsWith("/admin/");
+  const isHiddenPage = pathname === "/admin" || pathname === "/login" || pathname.startsWith("/admin/"); 
   if (isHiddenPage){
     return null;
   }
