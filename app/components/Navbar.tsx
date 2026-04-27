@@ -3,8 +3,17 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname} from "next/navigation";
+ 
 
 export default function Navbar() {
+  const pathname = usePathname();
+  
+  const isHiddenPage = pathname === "/admin" || pathname === "/login" || pathname.startsWith("/admin/");
+  if (isHiddenPage){
+    return null;
+  }
+  
   const [isOpen, setIsOpen] = useState(false);
 
   const menuItems = [
