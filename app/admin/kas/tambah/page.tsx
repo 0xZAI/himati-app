@@ -33,28 +33,28 @@ export default function TambahKasPage() {
         <div className="bg-white rounded-2xl shadow-sm border border-gray-100 max-w-2xl">
           <form action={simpanKasBaru} className="p-6 md:p-8 space-y-6">
             <div className="space-y-2">
-              <label className="text-xs font-bold text-gray-400 uppercase tracking-wider block">Nama Rekening / Kas</label>
+              <label className="text-xs font-bold text-gray-800 uppercase tracking-wider block">Nama Rekening / Kas</label>
               <input 
                 type="text" name="name" required 
                 placeholder="Contoh: Bank BNI Bendahara, Kas Tunai, dll"
-                className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 outline-none focus:border-[#A67B27]"
+                className="w-full px-4 py-3 rounded-xl bg-gray-50 border text-gray-800 border-gray-200 outline-none focus:border-[#A67B27]"
               />
             </div>
 
             <div className="space-y-2">
-              <label className="text-xs font-bold text-gray-400 uppercase tracking-wider block">Saldo Awal (Rp)</label>
+              <label className="text-xs font-bold text-gray-800 uppercase tracking-wider block">Saldo Awal (Rp)</label>
               <input 
                 type="number" name="balance" required defaultValue="0"
-                className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 outline-none focus:border-[#A67B27] font-bold text-lg"
+                className="w-full px-4 py-3 rounded-xl bg-gray-50 text-gray-800 border border-gray-200 outline-none focus:border-[#A67B27] font-bold text-lg"
               />
             </div>
 
             <div className="space-y-2">
-              <label className="text-xs font-bold text-gray-400 uppercase tracking-wider block">Keterangan Singkat</label>
+              <label className="text-xs font-bold text-gray-800 uppercase tracking-wider block">Keterangan Singkat</label>
               <textarea 
                 name="description" rows={3}
                 placeholder="Misal: Rekening khusus dana beasiswa..."
-                className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 outline-none focus:border-[#A67B27]"
+                className="w-full px-4 py-3 rounded-xl text-gray-800 bg-gray-50 border border-gray-200 outline-none focus:border-[#A67B27]"
               ></textarea>
             </div>
 

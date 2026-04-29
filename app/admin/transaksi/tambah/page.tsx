@@ -96,13 +96,13 @@ export default async function TambahTransaksiPage() {
               <div className="flex gap-4">
                 <label className="flex-1 cursor-pointer">
                   <input type="radio" name="type" value="IN" className="peer sr-only" required defaultChecked />
-                  <div className="p-4 rounded-xl border-2 border-gray-100 text-center peer-checked:border-emerald-500 peer-checked:bg-emerald-50 peer-checked:text-emerald-700 font-bold transition-all hover:bg-gray-50">
+                  <div className="p-4 rounded-xl border-2 border-gray-100 text-gray-400 text-center peer-checked:border-emerald-500 peer-checked:bg-emerald-50 peer-checked:text-emerald-700 font-bold transition-all hover:bg-gray-50">
                     📥 Pemasukan Kas
                   </div>
                 </label>
                 <label className="flex-1 cursor-pointer">
                   <input type="radio" name="type" value="OUT" className="peer sr-only" required />
-                  <div className="p-4 rounded-xl border-2 border-gray-100 text-center peer-checked:border-rose-500 peer-checked:bg-rose-50 peer-checked:text-rose-700 font-bold transition-all hover:bg-gray-50">
+                  <div className="p-4 rounded-xl border-2 border-gray-100 text-gray-400 text-center peer-checked:border-rose-500 peer-checked:bg-rose-50 peer-checked:text-rose-700 font-bold transition-all hover:bg-gray-50">
                     📤 Pengeluaran Kas
                   </div>
                 </label>
