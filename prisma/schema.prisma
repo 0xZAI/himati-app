@@ -49,3 +49,13 @@ enum TransactionType {
   IN   // Pemasukan
   OUT  // Pengeluaran
 }
+
+// Tabel Artikel (Untuk menulis Artikel)
+model Article {
+  id        Int      @id @default(autoincrement())
+  title     String
+  content   String   @db.Text
+  imageUrl  String?  @db.Text 
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
