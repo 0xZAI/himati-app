@@ -30,11 +30,6 @@ export default async function AdminDashboard() {
             <h1 className="text-2xl font-bold text-gray-800">Ringkasan Sistem</h1>
             <p className="text-sm text-gray-500">Pantau aktivitas keuangan dan konten portal HIMMATI.</p>
           </div>
-          <div className="flex gap-3">
-            <button className="px-4 py-2 bg-[#0B3B3C] text-white rounded-lg text-sm font-bold shadow-md hover:bg-[#072526] transition-colors flex items-center gap-2">
-              <span>+</span> Catat Transaksi Baru
-            </button>
-          </div>
         </header>
 
         {/* Quick Stats Grid */}
