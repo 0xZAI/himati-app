@@ -157,7 +157,7 @@ export default async function TambahTransaksiPage() {
                   className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:border-[#A67B27] focus:ring-1 focus:ring-[#A67B27] outline-none text-gray-800 cursor-pointer"
                 >
                   <option value="">-- Pilih Rekening --</option>
-                  {accounts.map(acc => (
+                  {accounts.map((acc : any) => (
                     <option key={acc.id} value={acc.id}>{acc.name} (Saldo: Rp {acc.balance.toString()})</option>
                   ))}
                 </select>
@@ -173,10 +173,10 @@ export default async function TambahTransaksiPage() {
                 >
                   <option value="">-- Pilih Kategori --</option>
                   <optgroup label="Kategori Pemasukan (IN)">
-                    {kategoriPemasukan.map(cat => <option key={cat.id} value={cat.id}>{cat.name}</option>)}
+                    {kategoriPemasukan.map((cat : any) => <option key={cat.id} value={cat.id}>{cat.name}</option>)}
                   </optgroup>
                   <optgroup label="Kategori Pengeluaran (OUT)">
-                    {kategoriPengeluaran.map(cat => <option key={cat.id} value={cat.id}>{cat.name}</option>)}
+                    {kategoriPengeluaran.map((cat : any) => <option key={cat.id} value={cat.id}>{cat.name}</option>)}
                   </optgroup>
                 </select>
               </div>
