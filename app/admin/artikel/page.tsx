@@ -57,7 +57,7 @@ export default async function KelolaArtikelPage() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-100">
-                {articles.map((item) => (
+                {articles.map((item :any) => (
                   <tr key={item.id} className="hover:bg-gray-50/50 transition-colors">
                     <td className="px-6 py-4 whitespace-nowrap text-gray-500 font-medium">
                       {new Date(item.createdAt).toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' })}

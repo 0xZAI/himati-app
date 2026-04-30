@@ -98,7 +98,7 @@ export default async function ArtikelPage() {
           {/* GRID DAFTAR ARTIKEL (Hanya dirender jika ada artikel sisa) */}
           {daftarArtikelRaw.length > 0 && (
             <section className="max-w-6xl mx-auto px-4 mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {daftarArtikelRaw.map((artikel : any) => (
+              {daftarArtikelRaw.map((artikel) => (
                 <Link key={artikel.id} href={`/artikel/${artikel.slug}`} className="group">
                   <div className="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden h-full flex flex-col hover:-translate-y-1">
                     
