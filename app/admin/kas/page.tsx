@@ -163,7 +163,7 @@ export default async function KelolaKasPage() {
                   <span>📥</span> Kategori Pemasukan
                 </h3>
                 <ul className="space-y-2">
-                  {katMasuk.map(kat => (
+                  {katMasuk.map((kat : any) => (
                     <li key={kat.id} className="bg-white px-3 py-2 rounded-lg border border-emerald-100 flex justify-between items-center text-sm shadow-sm">
                       <span className="font-medium text-gray-700">{kat.name}</span>
                       <TombolHapusKategori id={kat.id} nama={kat.name} hapusAction={hapusKategori} />
@@ -179,7 +179,7 @@ export default async function KelolaKasPage() {
                   <span>📤</span> Kategori Pengeluaran
                 </h3>
                 <ul className="space-y-2">
-                  {katKeluar.map(kat => (
+                  {katKeluar.map((kat : any) => (
                     <li key={kat.id} className="bg-white px-3 py-2 rounded-lg border border-rose-100 flex justify-between items-center text-sm shadow-sm">
                       <span className="font-medium text-gray-700">{kat.name}</span>
                       <TombolHapusKategori id={kat.id} nama={kat.name} hapusAction={hapusKategori} />
