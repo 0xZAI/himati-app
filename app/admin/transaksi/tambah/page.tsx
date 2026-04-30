@@ -65,8 +65,8 @@ export default async function TambahTransaksiPage() {
   const categories = await prisma.category.findMany({ orderBy: { name: 'asc' } });
 
   // Pisahkan kategori berdasarkan tipe untuk memudahkan UI
-  const kategoriPemasukan = categories.filter(c => c.type === 'IN');
-  const kategoriPengeluaran = categories.filter(c => c.type === 'OUT');
+  const kategoriPemasukan = categories.filter((c : any) => c.type === 'IN');
+  const kategoriPengeluaran = categories.filter((c : any) => c.type === 'OUT');
 
   // Format tanggal hari ini (YYYY-MM-DD) sebagai nilai default input tanggal
   const hariIni = new Date().toISOString().split('T')[0];
