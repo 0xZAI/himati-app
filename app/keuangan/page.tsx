@@ -2,7 +2,7 @@ import { prisma } from "../../lib/prisma";
 
 export default async function KeuanganPublik() {
   const accounts = await prisma.cashAccount.findMany({ orderBy: { id: 'asc' } });
-  const totalSaldo = accounts.reduce((sum, acc) => sum + Number(acc.balance), 0);
+  const totalSaldo = accounts.reduce((sum: number, acc: any) => sum + Number(acc.balance), 0);
 
   const now = new Date();
   const startOfMonth = new Date(now.getFullYear(), now.getMonth(), 1);
