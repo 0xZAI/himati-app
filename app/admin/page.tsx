@@ -6,7 +6,7 @@ import AdminSidebar from "./adminsidebar";
 export default async function AdminDashboard() {
   // --- MENGAMBIL DATA DARI DATABASE ---
   const accounts = await prisma.cashAccount.findMany();
-  const totalSaldo = accounts.reduce((sum, acc) => sum + Number(acc.balance), 0);
+  const totalSaldo = accounts.reduce((sum :any, acc) => sum + Number(acc.balance), 0);
 
   // Ambil 5 transaksi terakhir untuk tabel ringkasan
   const recentTransactions = await prisma.transaction.findMany({
