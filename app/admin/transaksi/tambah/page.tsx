@@ -21,7 +21,7 @@ async function simpanTransaksi(formData: FormData) {
 
   try {
     // Gunakan Prisma $transaction untuk memastikan kedua proses berhasil atau gagal bersamaan
-    await prisma.$transaction(async (tx) => {
+    await prisma.$transaction(async (tx : any) => {
       // 1. Simpan riwayat transaksi ke tabel Transaction
       await tx.transaction.create({
         data: {
