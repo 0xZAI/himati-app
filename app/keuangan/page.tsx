@@ -12,12 +12,12 @@ export default async function KeuanganPublik() {
   });
 
   const pemasukanBulanIni = currentMonthTransactions
-    .filter(t => t.type === 'IN')
-    .reduce((sum, t) => sum + Number(t.amount), 0);
+    .filter((t : any) => t.type === 'IN')
+    .reduce((sum : any, t : any) => sum + Number(t.amount), 0);
 
   const pengeluaranBulanIni = currentMonthTransactions
-    .filter(t => t.type === 'OUT')
-    .reduce((sum, t) => sum + Number(t.amount), 0);
+    .filter((t : any) => t.type === 'OUT')
+    .reduce((sum : any, t : any) => sum + Number(t.amount), 0);
 
   const recentTransactions = await prisma.transaction.findMany({
     take: 10, // Menampilkan 10 transaksi terakhir untuk transparansi lebih baik
