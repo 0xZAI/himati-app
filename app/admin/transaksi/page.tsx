@@ -90,7 +90,7 @@ export default async function KelolaTransaksiPage() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-100">
-                {transactions.map((trx) => (
+                {transactions.map((trx: any) => (
                   <tr key={trx.id} className="hover:bg-gray-50/50 transition-colors group">
                     {/* Kolom Tanggal */}
                     <td className="px-6 py-4 whitespace-nowrap">
