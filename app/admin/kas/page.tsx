@@ -61,8 +61,8 @@ export default async function KelolaKasPage() {
     include: { _count: { select: { transactions: true } } }
   });
 
-  const katMasuk = categories.filter(c => c.type === 'IN');
-  const katKeluar = categories.filter(c => c.type === 'OUT');
+  const katMasuk = categories.filter((c : any) => c.type === 'IN');
+  const katKeluar = categories.filter((c : any) => c.type === 'OUT');
 
   const formatRupiah = (angka: number) => {
     return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(angka);
@@ -86,7 +86,7 @@ export default async function KelolaKasPage() {
           </header>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {accounts.map((acc) => (
+            {accounts.map((acc : any) => (
               <div key={acc.id} className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-between">
                 <div>
                   <div className="flex justify-between items-start mb-4">
