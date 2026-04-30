@@ -85,7 +85,7 @@ export default async function KeuanganPublik() {
           </div>
           
           <div className="space-y-4">
-            {accounts.map((account) => (
+            {accounts.map((account : any) => (
               <div key={account.id} className="bg-white p-5 rounded-2xl shadow-sm border border-gray-100 flex justify-between items-center group hover:border-[#A67B27] transition-colors">
                 <div className="flex flex-col">
                   <span className="text-sm font-bold text-gray-700">{account.name}</span>
@@ -126,7 +126,7 @@ export default async function KeuanganPublik() {
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-50">
-                  {recentTransactions.map((trx) => (
+                  {recentTransactions.map((trx : any) => (
                     <tr key={trx.id} className="hover:bg-gray-50 transition-colors">
                       <td className="px-6 py-5 text-gray-500 whitespace-nowrap">
                         {new Date(trx.date).toLocaleDateString('id-ID', { day: 'numeric', month: 'short', year: 'numeric' })}
