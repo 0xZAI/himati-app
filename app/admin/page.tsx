@@ -6,7 +6,7 @@ import AdminSidebar from "./adminsidebar";
 export default async function AdminDashboard() {
   // --- MENGAMBIL DATA DARI DATABASE ---
   const accounts = await prisma.cashAccount.findMany();
-  const totalSaldo = accounts.reduce((sum :any, acc) => sum + Number(acc.balance), 0);
+  const totalSaldo = accounts.reduce((sum :any, acc : any) => sum + Number(acc.balance), 0);
 
   // Ambil 5 transaksi terakhir untuk tabel ringkasan
   const recentTransactions = await prisma.transaction.findMany({
@@ -82,7 +82,7 @@ export default async function AdminDashboard() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-100">
-                {recentTransactions.map((trx) => (
+                {recentTransactions.map((trx : any) => (
                   <tr key={trx.id} className="hover:bg-gray-50 transition-colors">
                     <td className="px-6 py-4 text-gray-500 whitespace-nowrap">
                       {new Date(trx.date).toLocaleDateString('id-ID', { day: 'numeric', month: 'short', year: 'numeric' })}
